@@ -22,7 +22,7 @@ Files are also created for subclass injection and linked via [Norbyte's Baldur's
 ## Requirements and Recommendations  
 Subclasses created using this are set to up with [BG3 Community Library](https://github.com/BG3-Community-Library-Team/BG3-Community-Library) and [Compatibility Framework](https://github.com/BG3-Community-Library-Team/BG3-Compatibility-Framework) as requirements.
 
-Recommend installing [ImprovedUI ReleaseReady](https://www.nexusmods.com/baldursgate3/mods/366) so that the interface shows new subclasses easier.
+Recommend installing [ImprovedUI ReleaseReady](https://www.nexusmods.com/baldursgate3/mods/366) so that the interface shows new subclasses easier. Also recommend installing ImprovedUI Assets from the optional files for ImprovedUI ReleaseReady to use a custom class icon.
 
 ## Folder and File structure
 - ModauthornameSubclassname  
