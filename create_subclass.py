@@ -13,7 +13,7 @@ while base_class not in base_classes.keys():
     base_class = input("Base class: ").lower()
     if base_class not in base_classes.keys():
         print(f"Please enter a class from {', '.join([*base_classes])}")
-subclass = input("Subclass: ").title()
+subclass = input("Subclass name: ").title()
 
 mod_dir = f'{mod_author.replace(" ", "")}{subclass.replace(" ", "")}'
 mod_info = {"mod_author": mod_author, "subclass": subclass,
