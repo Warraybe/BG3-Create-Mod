@@ -4,7 +4,7 @@ import uuid
 import class_info
 
 
-def create_uuids(class_name):
+def create_subclass_uuids(class_name):
     uuid_list = {
         "mod_uuid": uuid.uuid4(),
         "base_class": class_info.base_classes[class_name.lower()]['uuid'],
