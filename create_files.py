@@ -184,7 +184,7 @@ def create_progression(mod_info, uuids):
         f.write(progression_content)
 
 
-def create_files(mod_info, uuids):
+def create_subclass_files(mod_info, uuids):
     create_meta(mod_info, uuids)
     create_scriptextender_files(mod_info, uuids)
     create_localization(mod_info, uuids)

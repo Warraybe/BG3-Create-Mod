@@ -1,5 +1,5 @@
 from class_info import base_classes
-from create_files import create_files
+from create_files import create_subclass_files
 from create_folders import create_folders
 from create_uuids import create_uuids
 
@@ -17,4 +17,4 @@ mod_info = {"mod_author": mod_author, "subclass": subclass,
 uuids = create_uuids(base_class)
 
 create_folders(mod_info)
-create_files(mod_info, uuids)
+create_subclass_files(mod_info, uuids)
