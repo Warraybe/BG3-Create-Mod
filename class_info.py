@@ -1,4 +1,4 @@
-base_classes = {
+main_classes = {
     "barbarian": {"uuid": "d8cadb42-0ff9-4049-afaf-e5d78d06a399", "level": 3},
     "bard": {"uuid": "92cd50b6-eb1b-4824-8adb-853e90c34c90", "level": 3},
     "cleric": {"uuid": "114e7aee-d1d4-4371-8d90-8a2080592faf", "level": 1},
