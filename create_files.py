@@ -59,21 +59,24 @@ def create_meta(mod_info, uuids):
 
 
 def create_scriptextender_files(mod_info, uuids):
-    content = f'''{{
+    content = f"""{{
     "RequiredVersion": 14,
     "ModTable": "{mod_info['mod_dir']}",
     "FeatureFlags": [
         "Lua"
     ]
-}}'''
+}}"""
 
-    file_path = os.path.abspath(f"{mod_info['mod_dir']}\\Mods\\{mod_info['mod_dir']}\\ScriptExtender")
+    file_path = os.path.abspath(
+        f"{mod_info['mod_dir']}\\Mods\\{mod_info['mod_dir']}\\ScriptExtender"
+    )
 
     with open(os.path.join(file_path, "Config.json"), "w") as f:
         f.write(content)
 
     file_path = os.path.abspath(
-        f"{mod_info['mod_dir']}\\Mods\\{mod_info['mod_dir']}\\ScriptExtender\\Lua")
+        f"{mod_info['mod_dir']}\\Mods\\{mod_info['mod_dir']}\\ScriptExtender\\Lua"
+    )
 
     with open(os.path.join(file_path, "BootstrapServer.lua"), "w") as f:
         f.write("")
@@ -81,7 +84,7 @@ def create_scriptextender_files(mod_info, uuids):
     with open(os.path.join(file_path, "BootstrapClient.lua"), "w") as f:
         f.write('Ext.Require("InitCompatibilityFramework.lua")\n')
 
-    framework_content = f'''modGuid = "{uuids['mod_uuid']}"
+    framework_content = f"""modGuid = "{uuids['mod_uuid']}"
 
 if Ext.Mod.IsModLoaded("67fbbd53-7c7d-4cfa-9409-6d737b4d92a9") then
   local subClasses = {{
@@ -98,10 +101,9 @@ if Ext.Mod.IsModLoaded("67fbbd53-7c7d-4cfa-9409-6d737b4d92a9") then
   end
 
   Ext.Events.StatsLoaded:Subscribe(OnStatsLoaded)
-end'''
+end"""
 
-    with open(os.path.join(file_path, "InitCompatibilityFramework.lua"),
-              "w") as f:
+    with open(os.path.join(file_path, "InitCompatibilityFramework.lua"), "w") as f:
         f.write(framework_content)
 
 
@@ -113,17 +115,15 @@ def create_localization(mod_info, uuids):
 </contentList> """
 
     localization_file = os.path.join(
-        os.path.abspath(
-            f"{mod_info['mod_dir']}\\Localization\\English"
-        ),
-        mod_info['mod_dir'].replace(" ", "") + ".xml",
+        os.path.abspath(f"{mod_info['mod_dir']}\\Localization\\English"),
+        mod_info["mod_dir"].replace(" ", "") + ".xml",
     )
     with open(localization_file, "w") as f:
         f.write(localization_content)
 
 
 def create_description(mod_info, uuids):
-    description_content = f'''<?xml version="1.0" encoding="UTF-8"?>
+    description_content = f"""<?xml version="1.0" encoding="UTF-8"?>
 <save>
     <version major="4" minor="0" revision="7" build="406"/>
     <region id="ClassDescriptions">
@@ -145,7 +145,7 @@ def create_description(mod_info, uuids):
             </children>
         </node>
     </region>
-</save>\n\n'''
+</save>\n\n"""
 
     file_path = os.path.abspath(
         f"{mod_info['mod_dir']}\\Public\\{mod_info['mod_dir']}\\ClassDescriptions"
@@ -156,7 +156,7 @@ def create_description(mod_info, uuids):
 
 
 def create_progression(mod_info, uuids):
-    progression_content = f'''<?xml version="1.0" encoding="UTF-8"?>
+    progression_content = f"""<?xml version="1.0" encoding="UTF-8"?>
 <save>
     <version major="4" minor="0" revision="6" build="5"/>
     <region id="Progressions">
@@ -175,12 +175,13 @@ def create_progression(mod_info, uuids):
             </children>
         </node>
     </region>
-</save>\n'''
+</save>\n"""
 
-    file_path = os.path.abspath(f"{mod_info['mod_dir']}\\Public\\{mod_info['mod_dir']}\\Progressions")
+    file_path = os.path.abspath(
+        f"{mod_info['mod_dir']}\\Public\\{mod_info['mod_dir']}\\Progressions"
+    )
 
-    with open(os.path.join(file_path, "Progressions.lsx"),
-              "w") as f:
+    with open(os.path.join(file_path, "Progressions.lsx"), "w") as f:
         f.write(progression_content)
 
 

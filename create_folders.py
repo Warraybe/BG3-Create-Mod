@@ -2,14 +2,13 @@ import os
 
 
 def create_folders(mod_info):
-
     cwd = os.getcwd()
 
     folders = [
-        os.path.join(cwd, mod_info['mod_dir']),
+        os.path.join(cwd, mod_info["mod_dir"]),
         os.path.join("Localization", "English"),
         os.path.join(f"Mods\\{mod_info['mod_dir']}\\ScriptExtender", "Lua"),
-        os.path.join("Public", mod_info['mod_dir']),
+        os.path.join("Public", mod_info["mod_dir"]),
     ]
     public_folders = [
         "ActionResourceDefinitions",
@@ -32,13 +31,11 @@ def create_folders(mod_info):
             for sub_folder in public_folders:
                 if isinstance(sub_folder, list):
                     os.makedirs(
-                        os.path.join(os.path.join(folders[0], folder),
-                                     *sub_folder),
+                        os.path.join(os.path.join(folders[0], folder), *sub_folder),
                         exist_ok=True,
                     )
                 else:
                     os.makedirs(
-                        os.path.join(os.path.join(folders[0], folder),
-                                     sub_folder),
+                        os.path.join(os.path.join(folders[0], folder), sub_folder),
                         exist_ok=True,
                     )
