@@ -6,7 +6,7 @@ def create_class_mod():
     has_subclass = input("Feature subclasses (y/n): ").lower()
     if has_subclass == "y":
         mod_info["subclass_level"] = int(input("Level for subclass choice: "))
-        input_names = input("Subclass names (comma separated): ").title()
+        input_names = input("Subclass name(s) (comma separated): ").title()
         mod_info["subclass_names"] = [name.strip() for name in input_names.split(",")]
 
     mod_info[
