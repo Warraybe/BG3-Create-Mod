@@ -16,7 +16,7 @@ def create_meta(mod_info, uuids):
                     <attribute id="Author" type="LSWString" value="{mod_info["mod_author"]}"/>
                     <attribute id="CharacterCreationLevelName" type="FixedString" value=""/>
                     <attribute id="Description" type="LSWString" value="Adds the {mod_info['subclass']} subclass for {mod_info['main_class'].title()}."/>
-                    <attribute id="Folder" type="LSWString" value="{mod_info["mod_dir"]}"/>
+                    <attribute id="Folder" type="LSWString" value="{mod_info["mod_name"]}"/>
                     <attribute id="GMTemplate" type="FixedString" value=""/>
                     <attribute id="LobbyLevelName" type="FixedString" value=""/>
                     <attribute id="MD5" type="LSWString" value=""/>
@@ -50,7 +50,7 @@ def create_meta(mod_info, uuids):
 </save>"""
 
     meta_file = os.path.join(
-        os.path.abspath(f"{mod_info['mod_dir']}\\Mods\\{mod_info['mod_dir']}"),
+        os.path.abspath(f"{mod_info['mod_name']}\\Mods\\{mod_info['mod_name']}"),
         "meta.lsx",
     )
 
@@ -61,21 +61,21 @@ def create_meta(mod_info, uuids):
 def create_scriptextender_files(mod_info, uuids):
     content = f"""{{
     "RequiredVersion": 14,
-    "ModTable": "{mod_info['mod_dir']}",
+    "ModTable": "{mod_info['mod_name']}",
     "FeatureFlags": [
         "Lua"
     ]
 }}"""
 
     file_path = os.path.abspath(
-        f"{mod_info['mod_dir']}\\Mods\\{mod_info['mod_dir']}\\ScriptExtender"
+        f"{mod_info['mod_name']}\\Mods\\{mod_info['mod_name']}\\ScriptExtender"
     )
 
     with open(os.path.join(file_path, "Config.json"), "w") as f:
         f.write(content)
 
     file_path = os.path.abspath(
-        f"{mod_info['mod_dir']}\\Mods\\{mod_info['mod_dir']}\\ScriptExtender\\Lua"
+        f"{mod_info['mod_name']}\\Mods\\{mod_info['mod_name']}\\ScriptExtender\\Lua"
     )
 
     with open(os.path.join(file_path, "BootstrapServer.lua"), "w") as f:
@@ -115,8 +115,8 @@ def create_localization(mod_info, uuids):
 </contentList> """
 
     localization_file = os.path.join(
-        os.path.abspath(f"{mod_info['mod_dir']}\\Localization\\English"),
-        mod_info["mod_dir"].replace(" ", "") + ".xml",
+        os.path.abspath(f"{mod_info['mod_name']}\\Localization\\English"),
+        mod_info["mod_name"].replace(" ", "") + ".xml",
     )
     with open(localization_file, "w") as f:
         f.write(localization_content)
@@ -148,7 +148,7 @@ def create_description(mod_info, uuids):
 </save>\n\n"""
 
     file_path = os.path.abspath(
-        f"{mod_info['mod_dir']}\\Public\\{mod_info['mod_dir']}\\ClassDescriptions"
+        f"{mod_info['mod_name']}\\Public\\{mod_info['mod_name']}\\ClassDescriptions"
     )
 
     with open(os.path.join(file_path, "ClassDescriptions.lsx"), "w") as f:
@@ -178,7 +178,7 @@ def create_progression(mod_info, uuids):
 </save>\n"""
 
     file_path = os.path.abspath(
-        f"{mod_info['mod_dir']}\\Public\\{mod_info['mod_dir']}\\Progressions"
+        f"{mod_info['mod_name']}\\Public\\{mod_info['mod_name']}\\Progressions"
     )
 
     with open(os.path.join(file_path, "Progressions.lsx"), "w") as f:

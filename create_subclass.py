@@ -19,7 +19,6 @@ def create_subclass_mod():
         "subclass": subclass,
         "main_class": base_class,
         "mod_name": mod_dir,
-        "mod_dir": mod_dir,
     }
     uuids = create_subclass_uuids(base_class)
     create_folders(mod_info)
