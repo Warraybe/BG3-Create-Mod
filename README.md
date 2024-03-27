@@ -4,44 +4,55 @@ This is a simple script that will create the folder and file structure for a new
 
 ## Usage  
 
-Run create_mod.py and enter information as needed.
+Run **create_mod.py** and enter information as needed.
 
-Class mod creation still WIP and will not function. At this time only Subclass feature works.
+Custom class mod creation still WIP and will not function. At this time only Subclass feature works.
+
+##  Class Mod Arguments 
+**Mod author name** - Name of the Mod Author. This is shown in BG3MM metadata.
+
+**Class name** - Name for the new class. This is shown in game, and used for BG3MM metadata.
+
+**Feature subclasses** - y/n. Does the new class have subclasses.
+
+**Subclass level** - What level do subclasses become available. 
+
+**Subclass name(s)** - Comma separated list of subclasses to add. This is shown in game.
 
 ##  Subclass Mod Arguments  
 
 **Mod author name** - Name of the Mod Author. This is shown in BG3MM metadata.
  
-**Base class** - Base class that you are adding a subclass to.
+**Main class** - Main class that you are adding a subclass to.  
 Acceptable arguments: barbarian, bard, cleric, druid, fighter, monk, paladin, ranger, rogue, sorcerer, warlock, wizard
 
 **Subclass name** - Name for the new subclass. This is shown in game, and used for BG3MM metadata.
 
-Files are generated with new UUIDs, and Handles. Handles are only created for the Subclass name and a descrption placeholder, and are linked to ClassDescriptions. UUIDs are set for meta, ClassDescriptions, and Progressions and linked. Progressions only has the initial entry for subclass creation, and not for all levels where the subclass obtains new features.
-
-Files are also created for subclass injection and linked via [Norbyte's Baldur's Gate 3 Script Extender](https://github.com/Norbyte/bg3se) using BG3 Community Library and Compatibility Framework.
+Files are created for subclass injection and linked via [Norbyte's Baldur's Gate 3 Script Extender](https://github.com/Norbyte/bg3se) using BG3 Community Library and Compatibility Framework.
 
 ## Requirements and Recommendations  
 Custom classes are created not requiring any dependencies.
 
-Subclasses created using this are set to up with [BG3 Community Library](https://github.com/BG3-Community-Library-Team/BG3-Community-Library) and [Compatibility Framework](https://github.com/BG3-Community-Library-Team/BG3-Compatibility-Framework) as requirements.
+Subclasses created are set to up with [BG3 Community Library](https://github.com/BG3-Community-Library-Team/BG3-Community-Library),  [Compatibility Framework](https://github.com/BG3-Community-Library-Team/BG3-Compatibility-Framework), and [Norbyte's Baldur's Gate 3 Script Extender](https://github.com/Norbyte/bg3se) as requirements.
 
 Recommend installing [ImprovedUI ReleaseReady](https://www.nexusmods.com/baldursgate3/mods/366) so that the interface shows new classes and subclasses easier. Also recommend installing ImprovedUI Assets from the optional files for ImprovedUI ReleaseReady to use a custom class icon.
 
 ## Folder and File structure
+Files are generated with UUIDs, and Handles. Handles are only created for the Class/Subclass name(s) and a description placeholder, and are linked to ClassDescriptions. UUIDs are set for meta, ClassDescriptions, and Progressions and linked. Progressions only has the initial entry for class/subclass creation, and not for all levels where the class/subclass obtains new features.
+
 - ModauthornameSubclassname / ModauthornameClassname
   - Localization  
     - English  
       - ModauthornameSubclassname.xml / ModauthornameClassname.xml
   - Mods  
     - ModauthornameSubclassname / ModauthornameClassname
-      - ScriptExtender
+      - ScriptExtender (Subclass only)
         - Lua
           - BootstrapClient.lua
           - BootstrapServer.lua
           - InitCompatibilityFramework
-            - InitCompatibilityFramework.lua (Subclass only)
-        - Config.json (Subclass only)
+            - InitCompatibilityFramework.lua
+        - Config.json
       - meta.lsx  
   - Public  
     - ModauthornameSubclassname / ModauthornameClassname  
