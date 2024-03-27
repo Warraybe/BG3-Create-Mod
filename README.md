@@ -4,9 +4,11 @@ This is a simple script that will create the folder and file structure for a new
 
 ## Usage  
 
-Run create_subclass.py and enter information as needed.
+Run create_mod.py and enter information as needed.
 
-## Arguments  
+Class mod creation still WIP and will not function. At this time only Subclass feature works.
+
+##  Subclass Mod Arguments  
 
 **Mod author name** - Name of the Mod Author. This is shown in BG3MM metadata.
  
