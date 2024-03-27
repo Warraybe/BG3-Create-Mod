@@ -1,4 +1,4 @@
-def create_class():
+def create_class_mod():
     mod_info = {
         "mod_author": input("Mod author name: ").title(),
         "class_name": input("Class name: ").title(),
