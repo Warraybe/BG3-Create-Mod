@@ -1,6 +1,6 @@
-# Baldur's Gate 3 - Create New Subclass Mod script  
+# Baldur's Gate 3 - Create New Class/Subclass Mod script  
 
-This is a simple script that will create the folder and file structure for a new subclass mod for classes included in Baldur's Gate 3.
+This is a simple script that will create the folder and file structure for a new custom class or subclass mod for classes included in Baldur's Gate 3.
 
 ## Usage  
 
@@ -22,27 +22,29 @@ Files are generated with new UUIDs, and Handles. Handles are only created for th
 Files are also created for subclass injection and linked via [Norbyte's Baldur's Gate 3 Script Extender](https://github.com/Norbyte/bg3se) using BG3 Community Library and Compatibility Framework.
 
 ## Requirements and Recommendations  
+Custom classes are created not requiring any dependencies.
+
 Subclasses created using this are set to up with [BG3 Community Library](https://github.com/BG3-Community-Library-Team/BG3-Community-Library) and [Compatibility Framework](https://github.com/BG3-Community-Library-Team/BG3-Compatibility-Framework) as requirements.
 
-Recommend installing [ImprovedUI ReleaseReady](https://www.nexusmods.com/baldursgate3/mods/366) so that the interface shows new subclasses easier. Also recommend installing ImprovedUI Assets from the optional files for ImprovedUI ReleaseReady to use a custom class icon.
+Recommend installing [ImprovedUI ReleaseReady](https://www.nexusmods.com/baldursgate3/mods/366) so that the interface shows new classes and subclasses easier. Also recommend installing ImprovedUI Assets from the optional files for ImprovedUI ReleaseReady to use a custom class icon.
 
 ## Folder and File structure
-- ModauthornameSubclassname  
+- ModauthornameSubclassname / ModauthornameClassname
   - Localization  
     - English  
-      - ModauthornameSubclassname.xml  
+      - ModauthornameSubclassname.xml / ModauthornameClassname.xml
   - Mods  
-    - ModauthornameSubclassname
+    - ModauthornameSubclassname / ModauthornameClassname
       - ScriptExtender
         - Lua
           - BootstrapClient.lua
           - BootstrapServer.lua
           - InitCompatibilityFramework
-            - InitCompatibilityFramework.lua 
-        - Config.json
+            - InitCompatibilityFramework.lua (Subclass only)
+        - Config.json (Subclass only)
       - meta.lsx  
   - Public  
-    - ModauthornameSubclassname  
+    - ModauthornameSubclassname / ModauthornameClassname  
       - ActionResourceDefinitions
       - Assets  
         - Textures  
