@@ -1,7 +1,7 @@
 import os
 import uuid
 
-from class_info import base_classes
+from class_info import main_classes
 
 
 def create_meta(mod_info, uuids):
@@ -137,7 +137,7 @@ def create_description(mod_info, uuids):
                     <attribute id="Name" type="FixedString" value="{mod_info['mod_name']}"/>
                     <attribute id="PrimaryAbility" type="uint8" value="1"/> 4 is for int. order goes from Str, Dex, Con, Int, Wis, and Cha.
                     <attribute id="ProgressionTableUUID" type="guid" value="{uuids['subclass_progression']}"/>
-                    <attribute id="ParentGuid" type="guid" value="{uuids['base_class']}"/>
+                    <attribute id="ParentGuid" type="guid" value="{uuids['main_class']}"/>
                     <attribute id="SoundClassType" type="FixedString" value="{mod_info['main_class'].title()}"/>
                     <attribute id="SpellCastingAbility" type="uint8" value="6"/>
                     <attribute id="UUID" type="guid" value="{uuids['subclass']}"/>
@@ -163,7 +163,7 @@ def create_progression(mod_info, uuids):
         <node id="root">
             <children>
                 <node id="Progression"> {mod_info['subclass']}
-                    <attribute id="Level" type="uint8" value="{base_classes[mod_info['main_class']]['level']}"/>
+                    <attribute id="Level" type="uint8" value="{main_classes[mod_info['main_class']]['level']}"/>
                     <attribute id="Name" type="LSString" value="{mod_info['mod_author'].replace(" ", "")}{mod_info['subclass'].replace(" ", "")}"/>
                     <attribute id="ProgressionType" type="uint8" value="1"/>
                     <attribute id="PassivesAdded" type="LSString" value=""/>
