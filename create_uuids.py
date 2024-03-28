@@ -28,8 +28,10 @@ def create_class_uuids(subclasses=None):
 
     if subclasses:
         for subclass in subclasses:
-            uuid_list[subclass] = uuid.uuid4()
-            uuid_list[subclass + "_name"] = os.urandom(19).hex()[:37]
-            uuid_list[subclass + "_description"] = os.urandom(19).hex()[:37]
+            subclass_name = subclass.lower()
+            uuid_list[subclass_name + "_subclass"] = uuid.uuid4()
+            uuid_list[subclass_name + "_name"] = os.urandom(19).hex()[:37]
+            uuid_list[subclass_name + "_description"] = os.urandom(19).hex()[:37]
+            uuid_list[subclass_name + "_progression"] = uuid.uuid4()
 
     return uuid_list
