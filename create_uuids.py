@@ -15,3 +15,21 @@ def create_subclass_uuids(class_name):
     }
 
     return uuid_list
+
+
+def create_class_uuids(subclasses=None):
+    uuid_list = {
+        "mod_uuid": uuid.uuid4(),
+        "main_class": uuid.uuid4(),
+        "class_name": os.urandom(19).hex()[:37],
+        "class_description": os.urandom(19).hex()[:37],
+        "class_progression": uuid.uuid4(),
+    }
+
+    if subclasses:
+        for subclass in subclasses:
+            uuid_list[subclass] = uuid.uuid4()
+            uuid_list[subclass + "_name"] = os.urandom(19).hex()[:37]
+            uuid_list[subclass + "_description"] = os.urandom(19).hex()[:37]
+
+    return uuid_list
