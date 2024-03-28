@@ -1,7 +1,11 @@
+from create_uuids import create_class_uuids
+
+
 def create_class_mod():
     mod_info = {
         "mod_author": input("Mod author name: ").title(),
         "class_name": input("Class name: ").title(),
+        "subclass_names": [],
     }
     has_subclass = input("Feature subclasses (y/n): ").lower()
     if has_subclass == "y":
@@ -12,3 +16,5 @@ def create_class_mod():
     mod_info[
         "mod_dir"
     ] = f'{mod_info["mod_author"].replace(" ", "")}{mod_info["class_name"].replace(" ", "")}'
+
+    uuids = create_class_uuids(mod_info["subclass_names"])
