@@ -13,7 +13,7 @@ def create_subclass_mod():
     mod_info["subclass"] = input("Subclass name: ").title()
 
     mod_info[
-        "mod_name"
+        "mod_dir"
     ] = f'{mod_info["mod_author"].replace(" ", "")}{mod_info["subclass"].replace(" ", "")}'
 
     uuids = create_subclass_uuids(mod_info["main_class"])
