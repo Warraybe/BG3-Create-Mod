@@ -5,10 +5,10 @@ def create_folders(mod_info):
     cwd = os.getcwd()
 
     folders = [
-        os.path.join(cwd, mod_info["mod_name"]),
+        os.path.join(cwd, mod_info["mod_dir"]),
         os.path.join("Localization", "English"),
-        os.path.join(f"Mods\\{mod_info['mod_name']}\\ScriptExtender", "Lua"),
-        os.path.join("Public", mod_info["mod_name"]),
+        os.path.join(f"Mods\\{mod_info['mod_dir']}\\ScriptExtender", "Lua"),
+        os.path.join("Public", mod_info["mod_dir"]),
     ]
     public_folders = [
         "ActionResourceDefinitions",
