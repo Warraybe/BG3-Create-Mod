@@ -40,22 +40,22 @@ Recommend installing [ImprovedUI ReleaseReady](https://www.nexusmods.com/baldurs
 ## Folder and File structure
 Files are generated with UUIDs, and Handles. Handles are only created for the Class/Subclass name(s) and a description placeholder, and are linked to ClassDescriptions. UUIDs are set for meta, ClassDescriptions, and Progressions and linked. Progressions only has the initial entry for class/subclass creation, and not for all levels where the class/subclass obtains new features.
 
-- ModauthornameSubclassname / ModauthornameClassname
+- Modauthorname**Subclass**name / Modauthorname**Class**name
   - Localization  
     - English  
-      - ModauthornameSubclassname.xml / ModauthornameClassname.xml
+      - Modauthorname**Subclass**name.xml / Modauthorname**Class**name.xml
   - Mods  
-    - ModauthornameSubclassname / ModauthornameClassname
+    - Modauthorname**Subclass**name / Modauthorname**Class**name
       - ScriptExtender 
         - Lua
           - BootstrapClient.lua
           - BootstrapServer.lua
           - InitCompatibilityFramework
-            - InitCompatibilityFramework.lua (Subclass only)
+            - InitCompatibilityFramework.lua **(Subclass only)**
         - Config.json
       - meta.lsx  
   - Public  
-    - ModauthornameSubclassname / ModauthornameClassname  
+    - Modauthorname**Subclass**name / Modauthorname**Class**name  
       - ActionResourceDefinitions
       - Assets  
         - Textures  
