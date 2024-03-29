@@ -119,10 +119,22 @@ end"""
 
 
 def create_localization(mod_info, uuids):
-    localization_content = f"""<?xml version="1.0" encoding="utf-8"?>
+    localization_content = ""
+    if "main_class" in mod_info and mod_info["main_class"] in main_classes.keys():
+        localization_content = f"""<?xml version="1.0" encoding="utf-8"?>
 <contentList>	
     <content contentuid="{uuids['subclass_name']}" version="1">{mod_info['subclass']}</content>
     <content contentuid="{uuids['subclass_description']}" version="1">Placeholder</content>
+</contentList> """
+    elif "subclass_names" in mod_info:
+        content = f"""    <content contentuid="{uuids['class_name']}" version="1">{mod_info['class_name']}</content>
+    <content contentuid="{uuids["class_description"]}" version="1">Placeholder</content>"""
+        for subclass in mod_info["subclass_names"]:
+            content += f"""\n    <content contentuid="{uuids[subclass.lower() + "_name"]}" version="1">{subclass}</content>
+    <content contentuid="{uuids[subclass.lower() + "_description"]}" version="1">Placeholder</content>"""
+        localization_content = f"""<?xml version="1.0" encoding="utf-8"?>
+<contentList>	
+{content}
 </contentList> """
 
     localization_file = os.path.join(
@@ -207,6 +219,6 @@ def create_subclass_files(mod_info, uuids):
 def create_class_files(mod_info, uuids):
     create_meta(mod_info, uuids)
     create_scriptextender_files(mod_info, uuids)
-    # create_localization(mod_info, uuids)
+    create_localization(mod_info, uuids)
     # create_description(mod_info, uuids)
     # create_progression(mod_info, uuids)
