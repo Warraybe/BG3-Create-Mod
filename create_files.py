@@ -191,3 +191,7 @@ def create_subclass_files(mod_info, uuids):
     create_localization(mod_info, uuids)
     create_description(mod_info, uuids)
     create_progression(mod_info, uuids)
+
+
+def create_class_files():
+    pass
