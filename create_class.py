@@ -1,4 +1,5 @@
 from create_uuids import create_class_uuids
+from create_folders import create_folders
 
 
 def create_class_mod():
@@ -18,3 +19,4 @@ def create_class_mod():
     ] = f'{mod_info["mod_author"].replace(" ", "")}{mod_info["class_name"].replace(" ", "")}'
 
     uuids = create_class_uuids(mod_info["subclass_names"])
+    create_folders(mod_info)
