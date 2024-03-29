@@ -46,12 +46,12 @@ Files are generated with UUIDs, and Handles. Handles are only created for the Cl
       - ModauthornameSubclassname.xml / ModauthornameClassname.xml
   - Mods  
     - ModauthornameSubclassname / ModauthornameClassname
-      - ScriptExtender (Subclass only)
+      - ScriptExtender 
         - Lua
           - BootstrapClient.lua
           - BootstrapServer.lua
           - InitCompatibilityFramework
-            - InitCompatibilityFramework.lua
+            - InitCompatibilityFramework.lua (Subclass only)
         - Config.json
       - meta.lsx  
   - Public  
