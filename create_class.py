@@ -1,5 +1,6 @@
 from create_uuids import create_class_uuids
 from create_folders import create_folders
+from create_files import create_class_files
 
 
 def create_class_mod():
@@ -20,3 +21,4 @@ def create_class_mod():
 
     uuids = create_class_uuids(mod_info["subclass_names"])
     create_folders(mod_info)
+    create_class_files()
