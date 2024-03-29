@@ -21,4 +21,4 @@ def create_class_mod():
 
     uuids = create_class_uuids(mod_info["subclass_names"])
     create_folders(mod_info)
-    create_class_files()
+    create_class_files(mod_info, uuids)
