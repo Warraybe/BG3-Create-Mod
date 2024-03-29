@@ -89,9 +89,13 @@ def create_scriptextender_files(mod_info, uuids):
         f.write("")
 
     with open(os.path.join(file_path, "BootstrapClient.lua"), "w") as f:
-        f.write('Ext.Require("InitCompatibilityFramework.lua")\n')
+        if "main_class" in mod_info and mod_info["main_class"] in main_classes.keys():
+            f.write('Ext.Require("InitCompatibilityFramework.lua")\n')
+        else:
+            f.write("")
 
-    framework_content = f"""modGuid = "{uuids['mod_uuid']}"
+    if "main_class" in mod_info and mod_info["main_class"] in main_classes.keys():
+        framework_content = f"""modGuid = "{uuids['mod_uuid']}"
 
 if Ext.Mod.IsModLoaded("67fbbd53-7c7d-4cfa-9409-6d737b4d92a9") then
   local subClasses = {{
@@ -110,8 +114,8 @@ if Ext.Mod.IsModLoaded("67fbbd53-7c7d-4cfa-9409-6d737b4d92a9") then
   Ext.Events.StatsLoaded:Subscribe(OnStatsLoaded)
 end"""
 
-    with open(os.path.join(file_path, "InitCompatibilityFramework.lua"), "w") as f:
-        f.write(framework_content)
+        with open(os.path.join(file_path, "InitCompatibilityFramework.lua"), "w") as f:
+            f.write(framework_content)
 
 
 def create_localization(mod_info, uuids):
@@ -202,7 +206,7 @@ def create_subclass_files(mod_info, uuids):
 
 def create_class_files(mod_info, uuids):
     create_meta(mod_info, uuids)
-    # create_scriptextender_files(mod_info, uuids)
+    create_scriptextender_files(mod_info, uuids)
     # create_localization(mod_info, uuids)
     # create_description(mod_info, uuids)
     # create_progression(mod_info, uuids)
