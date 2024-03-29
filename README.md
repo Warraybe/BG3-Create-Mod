@@ -35,6 +35,8 @@ Custom classes are created not requiring any dependencies.
 
 Subclasses created are set to up with [BG3 Community Library](https://github.com/BG3-Community-Library-Team/BG3-Community-Library),  [Compatibility Framework](https://github.com/BG3-Community-Library-Team/BG3-Compatibility-Framework), and [Norbyte's Baldur's Gate 3 Script Extender](https://github.com/Norbyte/bg3se) as requirements.
 
+Custom classes are set up for [Norbyte's Baldur's Gate 3 Script Extender](https://github.com/Norbyte/bg3se) if needed.
+
 Recommend installing [ImprovedUI ReleaseReady](https://www.nexusmods.com/baldursgate3/mods/366) so that the interface shows new classes and subclasses easier. Also recommend installing ImprovedUI Assets from the optional files for ImprovedUI ReleaseReady to use a custom class icon.
 
 ## Folder and File structure
